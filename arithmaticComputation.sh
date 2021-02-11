@@ -12,3 +12,6 @@ echo "Result for the second computation : "$result2
 
 result3=`expr $c+$a/$b  | bc -l`
 echo "Result for the third computation : "$result3
+
+result4=$(( $a % $b + $c ))
+echo "Result for the fourth computation : "$result4
