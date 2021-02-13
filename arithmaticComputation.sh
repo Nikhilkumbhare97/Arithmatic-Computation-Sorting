@@ -31,8 +31,10 @@ done
 
 echo "Array Values : "${array[@]}
 
-for((j = 1; j<4; j++))
+for (( i=0; i<4; i++ ))
 do
+	for((j = 1; j<4; j++))
+	do
 
         if [ ${array[j]} -lt ${array[$((j+1))]} ]
         then
@@ -40,6 +42,23 @@ do
             array[$j]=${array[$((j+1))]}
             array[$((j+1))]=$temp
         fi
+	done
 done
 
 echo "Array in sorted Descending order : "${array[@]}
+
+for (( i=0; i<4; i++ ))
+do
+	for(( j = 1; j<4; j++ ))
+	do
+
+        if [ ${array[j]} -gt ${array[$((j+1))]} ]
+        then
+            temp=${array[j]}
+            array[$j]=${array[$((j+1))]}
+            array[$((j+1))]=$temp
+        fi
+	done
+done
+
+echo "Array in sorted Ascending order : "${array[@]}
