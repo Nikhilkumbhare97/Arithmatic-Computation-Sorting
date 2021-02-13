@@ -23,3 +23,10 @@ resultArray[comp4]=$result4
 
 echo "${!resultArray[@]}"
 echo "${resultArray[@]}"
+
+for (( i=1; i<=4; i++ ))
+do
+	array[$i]=${resultArray[comp$i]}
+done
+
+echo "Array Values : "${array[@]}
